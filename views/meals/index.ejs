@@ -1,0 +1,31 @@
+<% include ('../partials/header') %>
+
+<div class="slideshow"></div>
+<header class="jumbotron meal-index">
+  <div class ="container">
+    <h2>View our list of oriental meals</h2>
+    <br>
+    <p>
+      <a class="btn-lg btn-success" href="/meals/new">Add a new meal</a>
+    </p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row text-center flex">
+      <% meals.forEach(function(meal){ %>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img id="index_img" src= "<%= meal.image %>">
+            <div class="caption">
+              <h4><%= meal.name %></h4>
+            </div>
+            <a class="btn-lg btn-primary" href="/meals/<%= meal._id %>">More Info</a>
+            <p></p>
+          </div>
+        </div>
+      <% }); %>
+  </div>  
+</div>
+
+<% include ('../partials/footer') %>

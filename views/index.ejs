@@ -1,0 +1,28 @@
+<% include ('.partials/header') %>
+<div class="container">
+    <header class="jumbotron">
+      <div class="container">
+        <h1>View our handpicked oriental meals from all over the world</h1>
+        <p>
+          <a class="btn btn-primary btn-lg" href="/meals/new">Add new Meal</a>
+        </p>
+      </div>
+  </header>
+</div>
+
+
+  <div class="row text-center flex">
+  <% meal.forEach(function(meals) { %>
+    <div class="col-sm-6 col-md-3 col-lg-1">
+      <div class="thumbnail">
+        <img src="<%= meals.image %>">
+        <div class="caption">
+          <h4><%= meals.name %></h4>
+        </div>
+        <p><a href="/meals/<%= meals._id %>" class="btn btn-primary">More Info</a></p>
+      </div>
+    </div>
+  <% }); %>
+</div>
+
+<% include ('.partials/footer') %>
